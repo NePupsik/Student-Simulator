@@ -17,8 +17,7 @@ for j in range(1, 7):
     products = all_product.find_all("div", class_="col-lg-2 col-md-3 shop-list-card pseudo-link no-link")
 
     for elem in products:
-        price = elem.find("p", class_="shop-rate").text
-        price = price[price.find(":")+1:price.find("%")]
-        title = elem.find("h3", class_="shop-title").text.strip()
-        with open("kups.txt", "a", encoding="utf-8") as file:
+        price = elem.find("div", class_="shop-rate").div
+        title = elem.find("div", class_="shop-title").text.strip()
+        with open("cash-backer.txt", "a", encoding="utf-8") as file:
             file.write(f"{title} ---->>>>{price}\n")
