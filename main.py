@@ -18,9 +18,10 @@ for j in range(1, 7):
 
     for elem in products:
         price = elem.find("div", class_="shop-rate").text
-        title = elem.find("div", class_="shop-title").text.strip()
+        title = elem.find("div", class_="shop-title").text
         with open("cash-backer.txt", "a", encoding="utf-8") as file:
             file.write(f"{title} ---->>>>{price}\n")
 
         print(title)
         print(price)
+        print(" ")
